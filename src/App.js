@@ -1,24 +1,54 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Home from './components/Home';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+
+} from 'react-router-dom';
+import Enquiry from './components/Enquiry';
+import Service from './components/Service';
+import ServiceRequest from './components/ServiceRequest';
+import EnquiryResponse from './components/EnquiryResponse';
+import Customer from './components/Customer';
+import CustomerDashboard from './components/CustomerDashboard';
+import UpdateDetails from './components/UpdateDetails';
+import ChangePassword from './components/ChangePassword';
+import RecoverPassword from './components/RecoverPassword';
+import FetchAllServices from './components/FetchAllServices';
+import Status from './components/Status'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Router>
+
+        <Routes>
+          <Route path="/home" element={<Home/>}/>
+          <Route path="/enquiry" element={<Enquiry/>}/>
+          <Route path="/enquiryresponse" element={<EnquiryResponse/>}/>
+          <Route path="/service" element={<Service/>}/>
+          <Route path="/service/fetchallservices" element={<FetchAllServices/>}/>
+          <Route path="/servicerequest" element={<ServiceRequest/>}/>
+          <Route path="/customer" element={<Customer/>}/>
+          <Route path="/customerdashboard" element={<CustomerDashboard/>}/>
+          <Route path="/customerdashboard/updatedetails"  element={<UpdateDetails/>}/>
+          <Route path="/customerdashboard/changepassword" element={<ChangePassword/>}/>
+          <Route path="/customerdashboard/recoverpassword" element={<RecoverPassword/>}/>
+
+          <Route path="/servicerequest/get/:id" element={<ServiceRequest/>}/>
+          <Route path="/servicerequest/save" element={<ServiceRequest/>}/>
+          <Route path="serviceRequest/find/all" element={<Status/>}/>
+
+          
+        </Routes>
+      </Router>
+      
     </div>
+
+    
   );
 }
 
