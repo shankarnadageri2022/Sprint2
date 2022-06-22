@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import img1 from '../images/img1.jpg';
+import img1 from '../images/homebg.jpeg';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { GetAllServices } from '../store/actions/GetAllServicesActions';
-import ServiceNavBar from './ServiceNavBar';
+import NavBar from './NavBar/NavBar';
+
+
 
 function FetchAllServices() {
 
@@ -19,9 +22,11 @@ function FetchAllServices() {
     }, []);
 
     return (
-        <div style={{ height: "500px" }}>
+
+        
+        <div className='container' style={{ height: "500px",marginTop:"70px"}}>
             <div>
-                <ServiceNavBar />
+                <NavBar/>
             </div>
             {/* <SearchProduct/> */}
             <div class="row">
