@@ -30,7 +30,7 @@ function Status() {
                            
                             <th>ServiceRequest Id</th>
                             <th>Vechile Name</th>
-                            <th>Service Name</th>
+                            <th>Service Id</th>
                             <th>Status</th>
                             <th>Amount</th>
                             

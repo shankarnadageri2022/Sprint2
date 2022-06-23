@@ -57,9 +57,15 @@ function UpdateDetails() {
       dispatch(updateCustomer(payload));
       alert("customer Details Updated.");
     }
-  
   }
 
+  const handleCancel = () => {
+    setcId("");
+    setcName("");
+    setcPhone("");
+    setcEmail("");
+    setcAddress("")
+  }
   return (
     <div>
       <div>
@@ -145,7 +151,10 @@ function UpdateDetails() {
           />
         </div>
         <button type="submit" className="btn btn-primary" onClick={handleSubmit} style={{ marginRight: "15px" }}>Update</button>
-        <button type="reset" className="btn btn-secondary">Cancel</button>
+      
+          <button class="btn btn-secondary" onClick={handleCancel}>
+            Cancel
+          </button>
       </div>
     </div>
   );

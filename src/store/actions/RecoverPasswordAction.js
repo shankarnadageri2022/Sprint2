@@ -8,6 +8,12 @@ export function recoverPassword(cId) {
             alert(resp.data)
             dispatch(recoverPasswordSuccess(resp.data))
         })
+        .catch(error => {
+
+            console.log(error);
+
+        })
+        
     }
 }
 

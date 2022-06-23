@@ -25,7 +25,10 @@ export function addService(customerId,payload) {
                 alert("Service request completed")
                 dispatch(addServiceSuccess(resp.data));
             }
-        )       
+        )
+        .catch(error=>{
+            alert(error.response.data);
+           })       
     }
 }
 

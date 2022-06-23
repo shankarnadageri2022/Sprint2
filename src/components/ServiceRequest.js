@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addService } from "../store/actions/GetAllServicesActions";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import NavBar from "./NavBar/NavBar";
-
 function ServiceRequest() {
 
   const [cId, setCId] = useState("");
@@ -19,9 +18,11 @@ function ServiceRequest() {
   const newService = useSelector((state) => state.serviceReducer.newService);
 
   const dispatch = useDispatch();
+  const navigate=useNavigate();
+
 
   const handleSubmit = (event) => {
-
+  
     //validate data
 
     let errors = {};
@@ -65,7 +66,11 @@ function ServiceRequest() {
 
 
       dispatch(addService(cId, payload));
+  
+      navigate(-1);
     }
+
+    
   };
   const handleCancel = () => {
     setCId("");
@@ -107,14 +112,19 @@ function ServiceRequest() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="category">Category</label>
-              <input
-                type="text"
-                className="form-control"
-                name="category"
-                value={sCategory}
-                onChange={(e) => setCategory(e.target.value)}
-              />
+
+            <label htmlFor="category">Category</label><br/>
+
+              <select class="form-select" aria-label="category"  value={sCategory} onChange={(e) => setCategory(e.target.value)}>
+              <option value="">--Select--</option>  
+                <option selected>Two Wheeler</option>
+
+                <option value="1">Three Wheeler</option>
+
+                <option value="2">Four Wheeler</option>
+
+              </select>
+
               {
                 formErrors.categoryError && <div style={{ color: 'red' }}>{formErrors.categoryError}</div>
               }

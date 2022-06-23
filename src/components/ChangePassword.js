@@ -57,8 +57,6 @@ function ChangePassword() {
   
       dispatch(changePassword(payload));
   
-      alert("Password changed Sucessfully! ");
-  
       navigate(-1);
     }
     
@@ -91,7 +89,7 @@ function ChangePassword() {
            
             <div className="form-group">
               <label htmlFor="name">Old Password</label>
-              <input type="text" className="form-control" name="oName" value={cOldPass} onChange={e => setcOldPass(e.target.value)} />
+              <input type="password" className="form-control" name="oName" value={cOldPass} onChange={e => setcOldPass(e.target.value)} />
               {
              PasswordErrors.customerOldPasswordError&&
              <div style={{color:"red"}}>{PasswordErrors.customerOldPasswordError} </div>
@@ -101,7 +99,7 @@ function ChangePassword() {
 
             <div className="form-group">
               <label htmlFor="name">New Password</label>
-              <input type="text" className="form-control" name="nName" value={cNewPassword} onChange={e => setcNewPassword(e.target.value)} />
+              <input type="password" className="form-control" name="nName" value={cNewPassword} onChange={e => setcNewPassword(e.target.value)} />
               {
              PasswordErrors.customerNewPasswordError&&
              <div style={{color:"red"}}>{PasswordErrors.customerNewPasswordError} </div>

@@ -15,11 +15,9 @@ export function changePassword(payload) {
 
             })
 
-            .catch(error => {
-
-                console.log(error);
-
-            })
+            .catch(error=>{
+                alert(error.response.data);
+               })
 
     }
 
